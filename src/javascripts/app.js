@@ -1,3 +1,2 @@
-import './modules'
-
-console.log(`app.js has loaded!`)
+import { init } from './modules/choropleth';
+init();
