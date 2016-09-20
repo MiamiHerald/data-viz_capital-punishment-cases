@@ -7,5 +7,5 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <div id="map"></div>
+  <div id="choropleth" class="choropleth js-choropleth" data-url="{{ homeURL }}/data/unemployment.tsv" data-value="florida" data-title="Florida Unemployment Rates"></div>
 {% endblock %}

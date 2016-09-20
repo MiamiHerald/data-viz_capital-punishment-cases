@@ -1,2 +1,2 @@
-import { init } from './modules/choropleth';
-init();
+import { loadChoropleths } from './modules/choropleth';
+loadChoropleths();

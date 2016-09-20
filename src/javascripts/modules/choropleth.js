@@ -2,56 +2,70 @@ import $ from 'jquery';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
 
-d3.select(window)
-    .on("resize", sizeChange);
+class Choropleth {
+  constructor(el, dataUrl, title) {
+    this.el = el;
+    this.dataUrl = dataUrl;
+    this.shapeUrl = `/data/florida.json`;
+    this.rateById = d3.map();
+    this.quantize = d3.scaleQuantize()
+      .domain([0, 0.15])
+      .range(d3.range(9).map((i) => `q${i}-9`));
+    this.projection = d3.geoMercator()
+      .center([-81.5158, 27.6648])
+      .scale(3500);
+    this.path = d3.geoPath()
+      .projection(this.projection);
 
-var tooltip = d3.select('body').append('div')
-            .attr('class', 'tooltip tooltip--hidden');
+  }
 
-var rateById = d3.map();
+  render() {
+    this.svg = d3.select(this.el)
+        .append(`svg`)
+        .attr(`width`, `100%`)
+            .append(`g`);
 
-var quantize = d3.scaleQuantize()
-  .domain([0, 0.15])
-  .range(d3.range(9).map((i) => `q${i}-9`));
+    this.loadData();
+    this.resizeChoropleth();
+    $(window).on(`resize`, this.resizeChoropleth.bind(this))
+  }
 
-var projection = d3.geoMercator()
-  .center([-81.5158, 27.6648])
-  .scale(3500);
+  resizeChoropleth() {
+    d3.select(`g`).attr(`transform`, `scale(${$(this.el).width() / 900})`);
+    $(`svg`).height($(this.el).width() * 0.618);
+  }
 
-var path = d3.geoPath()
-  .projection(projection);
+  loadData() {
+    d3.queue()
+      .defer(d3.json, this.shapeUrl)
+      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.id, +d.rate))
+      .await(this.drawMap.bind(this));
+  }
 
-var map = d3.select("#map")
-    .append('svg')
-    .attr('width', '100%')
-        .append('g');
-
-var counties;
-
-function init() {
-  sizeChange();
-
-  d3.queue()
-      .defer(d3.json, "/data/florida.json")
-      .defer(d3.tsv, "/data/unemployment.tsv", (d) => rateById.set(d.id, +d.rate))
-      .await(ready);
-}
-
-function ready(error, fl) {
+  drawMap(error, shapeData, unemploymentData) {
     if (error) throw error;
 
-    var counties = map.append("g")
-        .attr("class", "counties")
-      .selectAll("path")
-        .data(topojson.feature(fl, fl.objects.cb_2015_florida_county_20m).features)
-      .enter().append("path")
-        .attr("class", (d) => quantize(rateById.get(d.properties.GEOID)))
-        .attr("d", path);
+    this.counties = this.svg.append(`g`)
+        .attr(`class`, `counties`)
+      .selectAll(`path`)
+        .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
+      .enter().append(`path`)
+        .attr(`class`, (d) => this.quantize(this.rateById.get(d.properties.GEOID)))
+        .attr(`d`, this.path);
+  }
 }
 
-function sizeChange() {
-  d3.select("g").attr("transform", `scale(${$("#map").width()/900})`);
-  $("svg").height($("#map").width()*0.618);
+const loadChoropleths = () => {
+  const $choropleth = $(`.js-choropleth`);
+
+  $choropleth.each((index) => {
+    const $this = $choropleth.eq(index);
+    const id = $this.attr(`id`);
+    const url = $this.data(`url`);
+    const title = $this.data(`title`);
+
+    new Choropleth(`#${id}`, url, title).render();
+  });
 }
 
-export { init };
+export { loadChoropleths };
