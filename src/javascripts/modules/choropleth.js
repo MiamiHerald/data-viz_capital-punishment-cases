@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson';
 
 class Choropleth {
-  constructor(el, dataUrl, title) {
+  constructor(el, dataUrl) {
     this.el = el;
     this.dataUrl = dataUrl;
     this.shapeUrl = `/data/florida.json`;
@@ -16,14 +16,12 @@ class Choropleth {
       .scale(3500);
     this.path = d3.geoPath()
       .projection(this.projection);
-
   }
 
   render() {
-    this.svg = d3.select(this.el)
-        .append(`svg`)
+    this.svg = d3.select(this.el).append(`svg`)
         .attr(`width`, `100%`)
-            .append(`g`);
+        .append(`g`);
 
     this.loadData();
     this.resizeChoropleth();
@@ -62,9 +60,8 @@ const loadChoropleths = () => {
     const $this = $choropleth.eq(index);
     const id = $this.attr(`id`);
     const url = $this.data(`url`);
-    const title = $this.data(`title`);
 
-    new Choropleth(`#${id}`, url, title).render();
+    new Choropleth(`#${id}`, url).render();
   });
 }
 
