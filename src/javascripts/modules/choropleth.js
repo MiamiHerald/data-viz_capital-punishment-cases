@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
+import numeral from 'numeral';
 
 class Choropleth {
   constructor(el, dataUrl) {
@@ -9,8 +10,8 @@ class Choropleth {
     this.shapeUrl = `/data/florida.json`;
     this.rateById = d3.map();
     this.quantize = d3.scaleQuantize()
-      .domain([0, 0.15])
-      .range(d3.range(9).map((i) => `circuit--${i}`));
+      .domain([10000, 60000])
+      .range(d3.range(4).map((i) => `cases--${i + 1}`));
     this.projection = d3.geoMercator()
       .center([-81.5158, 27.6648])
       .scale(3500);
@@ -36,22 +37,27 @@ class Choropleth {
   loadData() {
     d3.queue()
       .defer(d3.json, this.shapeUrl)
-      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.id, +d.rate))
+      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.Counties, numeral().unformat(d.Median), parseInt(d.Circuit)))
       .await(this.drawMap.bind(this));
   }
 
   drawMap(error, shapeData, caseData) {
     if (error) throw error;
 
-    console.log(this.rateById);
-
-    this.counties = this.svg.append(`g`)
+    this.svg.append(`g`)
         .attr(`class`, `counties`)
       .selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => this.quantize(this.rateById.get(d.id)))
+        .attr(`class`, (d) => `${this.quantize(this.rateById.get(d.properties.NAME))} circuit--${d.properties.CIRCUIT}`)
         .attr(`d`, this.path);
+
+    shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
+      this.svg.append(`path`)
+          .datum(topojson.merge(shapeData, shapeData.objects.cb_2015_florida_county_20m.geometries.filter((d) => d.properties.CIRCUIT === x.properties.CIRCUIT )))
+          .attr(`class`, `circuit`)
+          .attr(`d`, this.path);
+    });
   }
 }
 

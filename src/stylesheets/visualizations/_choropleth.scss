@@ -1,29 +1,14 @@
-.circuit {
-  &--1 { fill: #B9242D }
-  &--2 { fill: #BC282D }
-  &--3 { fill: #BF2C2E }
-  &--4 { fill: #C2302E }
-  &--5 { fill: #C5352F }
-  &--6 { fill: #C8392F }
-  &--7 { fill: #CB3D30 }
-  &--8 { fill: #CE4130 }
-  &--9 { fill: #D14631 }
-  &--10 { fill: #D44A31 }  
-  &--11 { fill: #D84E32 }  
-  &--12 { fill: #DB5232 }  
-  &--13 { fill: #DE5733 }  
-  &--14 { fill: #E15B33 }  
-  &--15 { fill: #E45F34 }  
-  &--16 { fill: #E76334 }  
-  &--17 { fill: #EA6835 }  
-  &--18 { fill: #ED6C35 }  
-  &--19 { fill: #F07036 }  
-  &--20 { fill: #F47537 }  
+.cases {
+  &--1 { fill: #FEDD90 }
+  &--2 { fill: #F58B51 }
+  &--3 { fill: #EB1C30 }
+  &--4 { fill: #000 }
 }
 
 .counties path {
-  stroke: #fff;
-  stroke-width: 1px;
+  stroke: #FFF;
+  stroke-width: 0.5px;
+  stroke-dasharray: 2;
 }
 
 .choropleth {
@@ -34,4 +19,10 @@
   &--2, &--3, &--4 {
     @include span-columns(4);
   }
+}
+
+.circuit {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 1.5px;
 }
