@@ -1402,7 +1402,8 @@
                     "NAME": "Duval",
                     "LSAD": "06",
                     "ALAND": 1975212116,
-                    "AWATER": 403585670
+                    "AWATER": 403585670,
+                    "CIRCUIT": 4
                 }
             }, {
                 "arcs": [
@@ -1418,7 +1419,8 @@
                     "NAME": "Highlands",
                     "LSAD": "06",
                     "ALAND": 2632923680,
-                    "AWATER": 231677932
+                    "AWATER": 231677932,
+                    "CIRCUIT": 10
                 }
             }, {
                 "arcs": [
@@ -1434,7 +1436,8 @@
                     "NAME": "Gulf",
                     "LSAD": "06",
                     "ALAND": 1433780459,
-                    "AWATER": 494266823
+                    "AWATER": 494266823,
+                    "CIRCUIT": 14
                 }
             }, {
                 "arcs": [
@@ -1450,7 +1453,8 @@
                     "NAME": "Leon",
                     "LSAD": "06",
                     "ALAND": 1727171503,
-                    "AWATER": 90454011
+                    "AWATER": 90454011,
+                    "CIRCUIT": 2
                 }
             }, {
                 "arcs": [
@@ -1466,7 +1470,8 @@
                     "NAME": "Hamilton",
                     "LSAD": "06",
                     "ALAND": 1330689578,
-                    "AWATER": 13659798
+                    "AWATER": 13659798,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -1482,7 +1487,8 @@
                     "NAME": "Palm Beach",
                     "LSAD": "06",
                     "ALAND": 5101944591,
-                    "AWATER": 1070020998
+                    "AWATER": 1070020998,
+                    "CIRCUIT": 15
                 }
             }, {
                 "arcs": [
@@ -1498,7 +1504,8 @@
                     "NAME": "Liberty",
                     "LSAD": "06",
                     "ALAND": 2164095689,
-                    "AWATER": 19582444
+                    "AWATER": 19582444,
+                    "CIRCUIT": 2
                 }
             }, {
                 "arcs": [
@@ -1514,7 +1521,8 @@
                     "NAME": "St. Lucie",
                     "LSAD": "06",
                     "ALAND": 1480637109,
-                    "AWATER": 300862878
+                    "AWATER": 300862878,
+                    "CIRCUIT": 19
                 }
             }, {
                 "arcs": [
@@ -1530,7 +1538,8 @@
                     "NAME": "Sarasota",
                     "LSAD": "06",
                     "ALAND": 1439467414,
-                    "AWATER": 438988188
+                    "AWATER": 438988188,
+                    "CIRCUIT": 12
                 }
             }, {
                 "arcs": [
@@ -1546,7 +1555,8 @@
                     "NAME": "Clay",
                     "LSAD": "06",
                     "ALAND": 1566445254,
-                    "AWATER": 100334057
+                    "AWATER": 100334057,
+                    "CIRCUIT": 4
                 }
             }, {
                 "arcs": [
@@ -1562,7 +1572,8 @@
                     "NAME": "Charlotte",
                     "LSAD": "06",
                     "ALAND": 1764034033,
-                    "AWATER": 458806771
+                    "AWATER": 458806771,
+                    "CIRCUIT": 20
                 }
             }, {
                 "arcs": [
@@ -1578,7 +1589,8 @@
                     "NAME": "Walton",
                     "LSAD": "06",
                     "ALAND": 2687690444,
-                    "AWATER": 522844944
+                    "AWATER": 522844944,
+                    "CIRCUIT": 1
                 }
             }, {
                 "arcs": [
@@ -1594,7 +1606,8 @@
                     "NAME": "Manatee",
                     "LSAD": "06",
                     "ALAND": 1924779544,
-                    "AWATER": 387447453
+                    "AWATER": 387447453,
+                    "CIRCUIT": 12
                 }
             }, {
                 "arcs": [
@@ -1610,7 +1623,8 @@
                     "NAME": "Hendry",
                     "LSAD": "06",
                     "ALAND": 2986009287,
-                    "AWATER": 96120136
+                    "AWATER": 96120136,
+                    "CIRCUIT": 20
                 }
             }, {
                 "arcs": [
@@ -1626,7 +1640,8 @@
                     "NAME": "Lake",
                     "LSAD": "06",
                     "ALAND": 2432320587,
-                    "AWATER": 564194105
+                    "AWATER": 564194105,
+                    "CIRCUIT": 5
                 }
             }, {
                 "arcs": [
@@ -1642,7 +1657,8 @@
                     "NAME": "Flagler",
                     "LSAD": "06",
                     "ALAND": 1257381103,
-                    "AWATER": 221047161
+                    "AWATER": 221047161,
+                    "CIRCUIT": 7
                 }
             }, {
                 "arcs": [
@@ -1658,7 +1674,8 @@
                     "NAME": "Hardee",
                     "LSAD": "06",
                     "ALAND": 1651878523,
-                    "AWATER": 1439673
+                    "AWATER": 1439673,
+                    "CIRCUIT": 10
                 }
             }, {
                 "arcs": [
@@ -1674,7 +1691,8 @@
                     "NAME": "Hillsborough",
                     "LSAD": "06",
                     "ALAND": 2642601093,
-                    "AWATER": 635570785
+                    "AWATER": 635570785,
+                    "CIRCUIT": 13
                 }
             }, {
                 "arcs": [
@@ -1690,7 +1708,8 @@
                     "NAME": "Bradford",
                     "LSAD": "06",
                     "ALAND": 761365424,
-                    "AWATER": 16904945
+                    "AWATER": 16904945,
+                    "CIRCUIT": 8
                 }
             }, {
                 "arcs": [
@@ -1706,7 +1725,8 @@
                     "NAME": "Columbia",
                     "LSAD": "06",
                     "ALAND": 2065626671,
-                    "AWATER": 9773963
+                    "AWATER": 9773963,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -1722,7 +1742,8 @@
                     "NAME": "St. Johns",
                     "LSAD": "06",
                     "ALAND": 1555777526,
-                    "AWATER": 571964717
+                    "AWATER": 571964717,
+                    "CIRCUIT": 7
                 }
             }, {
                 "arcs": [
@@ -1738,7 +1759,8 @@
                     "NAME": "Gilchrist",
                     "LSAD": "06",
                     "ALAND": 905705522,
-                    "AWATER": 14362154
+                    "AWATER": 14362154,
+                    "CIRCUIT": 8
                 }
             }, {
                 "arcs": [
@@ -1754,7 +1776,8 @@
                     "NAME": "Lafayette",
                     "LSAD": "06",
                     "ALAND": 1407427927,
-                    "AWATER": 11646352
+                    "AWATER": 11646352,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -1770,7 +1793,8 @@
                     "NAME": "Brevard",
                     "LSAD": "06",
                     "ALAND": 2629960540,
-                    "AWATER": 1402786334
+                    "AWATER": 1402786334,
+                    "CIRCUIT": 18
                 }
             }, {
                 "arcs": [
@@ -1786,7 +1810,8 @@
                     "NAME": "Union",
                     "LSAD": "06",
                     "ALAND": 630807238,
-                    "AWATER": 16049079
+                    "AWATER": 16049079,
+                    "CIRCUIT": 8
                 }
             }, {
                 "arcs": [
@@ -1802,7 +1827,8 @@
                     "NAME": "Indian River",
                     "LSAD": "06",
                     "ALAND": 1302340528,
-                    "AWATER": 295574851
+                    "AWATER": 295574851,
+                    "CIRCUIT": 19
                 }
             }, {
                 "arcs": [
@@ -1818,7 +1844,8 @@
                     "NAME": "Holmes",
                     "LSAD": "06",
                     "ALAND": 1239970210,
-                    "AWATER": 26656232
+                    "AWATER": 26656232,
+                    "CIRCUIT": 14
                 }
             }, {
                 "arcs": [
@@ -1834,7 +1861,8 @@
                     "NAME": "Jefferson",
                     "LSAD": "06",
                     "ALAND": 1549064068,
-                    "AWATER": 99559047
+                    "AWATER": 99559047,
+                    "CIRCUIT": 2
                 }
             }, {
                 "arcs": [
@@ -1850,7 +1878,8 @@
                     "NAME": "Okaloosa",
                     "LSAD": "06",
                     "ALAND": 2409367476,
-                    "AWATER": 393201926
+                    "AWATER": 393201926,
+                    "CIRCUIT": 1
                 }
             }, {
                 "arcs": [
@@ -1866,7 +1895,8 @@
                     "NAME": "Broward",
                     "LSAD": "06",
                     "ALAND": 3126184877,
-                    "AWATER": 300028343
+                    "AWATER": 300028343,
+                    "CIRCUIT": 17
                 }
             }, {
                 "arcs": [
@@ -1882,7 +1912,8 @@
                     "NAME": "Okeechobee",
                     "LSAD": "06",
                     "ALAND": 1991730024,
-                    "AWATER": 318560291
+                    "AWATER": 318560291,
+                    "CIRCUIT": 19
                 }
             }, {
                 "arcs": [
@@ -1898,7 +1929,8 @@
                     "NAME": "Calhoun",
                     "LSAD": "06",
                     "ALAND": 1469389206,
-                    "AWATER": 18074798
+                    "AWATER": 18074798,
+                    "CIRCUIT": 14
                 }
             }, {
                 "arcs": [
@@ -1914,7 +1946,8 @@
                     "NAME": "Collier",
                     "LSAD": "06",
                     "ALAND": 5176959832,
-                    "AWATER": 792901545
+                    "AWATER": 792901545,
+                    "CIRCUIT": 20
                 }
             }, {
                 "arcs": [
@@ -1930,7 +1963,8 @@
                     "NAME": "Volusia",
                     "LSAD": "06",
                     "ALAND": 2851713758,
-                    "AWATER": 858278452
+                    "AWATER": 858278452,
+                    "CIRCUIT": 7
                 }
             }, {
                 "arcs": [
@@ -1946,7 +1980,8 @@
                     "NAME": "Sumter",
                     "LSAD": "06",
                     "ALAND": 1417596662,
-                    "AWATER": 84144128
+                    "AWATER": 84144128,
+                    "CIRCUIT": 5
                 }
             }, {
                 "arcs": [
@@ -1962,7 +1997,8 @@
                     "NAME": "Hernando",
                     "LSAD": "06",
                     "ALAND": 1224611025,
-                    "AWATER": 300943246
+                    "AWATER": 300943246,
+                    "CIRCUIT": 5
                 }
             }, {
                 "arcs": [
@@ -1978,7 +2014,8 @@
                     "NAME": "Gadsden",
                     "LSAD": "06",
                     "ALAND": 1337193226,
-                    "AWATER": 31687293
+                    "AWATER": 31687293,
+                    "CIRCUIT": 2
                 }
             }, {
                 "arcs": [
@@ -1994,7 +2031,8 @@
                     "NAME": "Seminole",
                     "LSAD": "06",
                     "ALAND": 801546672,
-                    "AWATER": 92810898
+                    "AWATER": 92810898,
+                    "CIRCUIT": 18
                 }
             }, {
                 "arcs": [
@@ -2010,7 +2048,8 @@
                     "NAME": "DeSoto",
                     "LSAD": "06",
                     "ALAND": 1649970328,
-                    "AWATER": 6247257
+                    "AWATER": 6247257,
+                    "CIRCUIT": 12
                 }
             }, {
                 "arcs": [
@@ -2026,7 +2065,8 @@
                     "NAME": "Alachua",
                     "LSAD": "06",
                     "ALAND": 2266378728,
-                    "AWATER": 242823265
+                    "AWATER": 242823265,
+                    "CIRCUIT": 8
                 }
             }, {
                 "arcs": [
@@ -2042,7 +2082,8 @@
                     "NAME": "Dixie",
                     "LSAD": "06",
                     "ALAND": 1826212267,
-                    "AWATER": 410631158
+                    "AWATER": 410631158,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -2058,7 +2099,8 @@
                     "NAME": "Taylor",
                     "LSAD": "06",
                     "ALAND": 2702176496,
-                    "AWATER": 489262125
+                    "AWATER": 489262125,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -2074,7 +2116,8 @@
                     "NAME": "Madison",
                     "LSAD": "06",
                     "ALAND": 1802874009,
-                    "AWATER": 50729943
+                    "AWATER": 50729943,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -2090,7 +2133,8 @@
                     "NAME": "Lee",
                     "LSAD": "06",
                     "ALAND": 2031443679,
-                    "AWATER": 1108606586
+                    "AWATER": 1108606586,
+                    "CIRCUIT": 20
                 }
             }, {
                 "arcs": [
@@ -2106,7 +2150,8 @@
                     "NAME": "Citrus",
                     "LSAD": "06",
                     "ALAND": 1507100924,
-                    "AWATER": 495589452
+                    "AWATER": 495589452,
+                    "CIRCUIT": 5
                 }
             }, {
                 "arcs": [
@@ -2122,7 +2167,8 @@
                     "NAME": "Polk",
                     "LSAD": "06",
                     "ALAND": 4653250695,
-                    "AWATER": 553800050
+                    "AWATER": 553800050,
+                    "CIRCUIT": 10
                 }
             }, {
                 "arcs": [
@@ -2138,7 +2184,8 @@
                     "NAME": "Martin",
                     "LSAD": "06",
                     "ALAND": 1408245188,
-                    "AWATER": 542261303
+                    "AWATER": 542261303,
+                    "CIRCUIT": 19
                 }
             }, {
                 "arcs": [
@@ -2154,7 +2201,8 @@
                     "NAME": "Santa Rosa",
                     "LSAD": "06",
                     "ALAND": 2620446204,
-                    "AWATER": 419623382
+                    "AWATER": 419623382,
+                    "CIRCUIT": 1
                 }
             }, {
                 "arcs": [
@@ -2170,7 +2218,8 @@
                     "NAME": "Osceola",
                     "LSAD": "06",
                     "ALAND": 3438608053,
-                    "AWATER": 461983619
+                    "AWATER": 461983619,
+                    "CIRCUIT": 9
                 }
             }, {
                 "arcs": [
@@ -2186,7 +2235,8 @@
                     "NAME": "Washington",
                     "LSAD": "06",
                     "ALAND": 1509528105,
-                    "AWATER": 85786032
+                    "AWATER": 85786032,
+                    "CIRCUIT": 14
                 }
             }, {
                 "arcs": [
@@ -2202,7 +2252,8 @@
                     "NAME": "Orange",
                     "LSAD": "06",
                     "ALAND": 2339574474,
-                    "AWATER": 258790917
+                    "AWATER": 258790917,
+                    "CIRCUIT": 9
                 }
             }, {
                 "arcs": [
@@ -2218,7 +2269,8 @@
                     "NAME": "Pinellas",
                     "LSAD": "06",
                     "ALAND": 709120966,
-                    "AWATER": 865924096
+                    "AWATER": 865924096,
+                    "CIRCUIT": 6
                 }
             }, {
                 "arcs": [
@@ -2234,7 +2286,8 @@
                     "NAME": "Escambia",
                     "LSAD": "06",
                     "ALAND": 1701332835,
-                    "AWATER": 564141200
+                    "AWATER": 564141200,
+                    "CIRCUIT": 1
                 }
             }, {
                 "arcs": [
@@ -2250,7 +2303,8 @@
                     "NAME": "Bay",
                     "LSAD": "06",
                     "ALAND": 1964402061,
-                    "AWATER": 711451659
+                    "AWATER": 711451659,
+                    "CIRCUIT": 14
                 }
             }, {
                 "arcs": [
@@ -2280,7 +2334,8 @@
                     "NAME": "Monroe",
                     "LSAD": "06",
                     "ALAND": 2546040739,
-                    "AWATER": 7133347242
+                    "AWATER": 7133347242,
+                    "CIRCUIT": 16
                 }
             }, {
                 "arcs": [
@@ -2296,7 +2351,8 @@
                     "NAME": "Glades",
                     "LSAD": "06",
                     "ALAND": 2087857862,
-                    "AWATER": 468345881
+                    "AWATER": 468345881,
+                    "CIRCUIT": 20
                 }
             }, {
                 "arcs": [
@@ -2312,7 +2368,8 @@
                     "NAME": "Suwannee",
                     "LSAD": "06",
                     "ALAND": 1783341102,
-                    "AWATER": 9594316
+                    "AWATER": 9594316,
+                    "CIRCUIT": 3
                 }
             }, {
                 "arcs": [
@@ -2328,7 +2385,8 @@
                     "NAME": "Baker",
                     "LSAD": "06",
                     "ALAND": 1515740957,
-                    "AWATER": 9686120
+                    "AWATER": 9686120,
+                    "CIRCUIT": 8
                 }
             }, {
                 "arcs": [
@@ -2344,7 +2402,8 @@
                     "NAME": "Marion",
                     "LSAD": "06",
                     "ALAND": 4112985503,
-                    "AWATER": 193293405
+                    "AWATER": 193293405,
+                    "CIRCUIT": 5
                 }
             }, {
                 "arcs": [
@@ -2360,7 +2419,8 @@
                     "NAME": "Putnam",
                     "LSAD": "06",
                     "ALAND": 1885199824,
-                    "AWATER": 256515596
+                    "AWATER": 256515596,
+                    "CIRCUIT": 7
                 }
             }, {
                 "arcs": [
@@ -2376,7 +2436,8 @@
                     "NAME": "Miami-Dade",
                     "LSAD": "06",
                     "ALAND": 4917324056,
-                    "AWATER": 1379396151
+                    "AWATER": 1379396151,
+                    "CIRCUIT": 11
                 }
             }, {
                 "arcs": [
@@ -2392,7 +2453,8 @@
                     "NAME": "Pasco",
                     "LSAD": "06",
                     "ALAND": 1936599224,
-                    "AWATER": 312708420
+                    "AWATER": 312708420,
+                    "CIRCUIT": 6
                 }
             }, {
                 "arcs": [
@@ -2408,7 +2470,8 @@
                     "NAME": "Nassau",
                     "LSAD": "06",
                     "ALAND": 1679962718,
-                    "AWATER": 200159392
+                    "AWATER": 200159392,
+                    "CIRCUIT": 4
                 }
             }, {
                 "arcs": [
@@ -2424,7 +2487,8 @@
                     "NAME": "Franklin",
                     "LSAD": "06",
                     "ALAND": 1411918810,
-                    "AWATER": 1275526881
+                    "AWATER": 1275526881,
+                    "CIRCUIT": 2
                 }
             }, {
                 "arcs": [
@@ -2440,7 +2504,8 @@
                     "NAME": "Jackson",
                     "LSAD": "06",
                     "ALAND": 2376988508,
-                    "AWATER": 95321393
+                    "AWATER": 95321393,
+                    "CIRCUIT": 14
                 }
             }, {
                 "arcs": [
@@ -2456,7 +2521,8 @@
                     "NAME": "Levy",
                     "LSAD": "06",
                     "ALAND": 2896185793,
-                    "AWATER": 762933268
+                    "AWATER": 762933268,
+                    "CIRCUIT": 8
                 }
             }, {
                 "arcs": [
@@ -2472,7 +2538,8 @@
                     "NAME": "Wakulla",
                     "LSAD": "06",
                     "ALAND": 1570621273,
-                    "AWATER": 334901394
+                    "AWATER": 334901394,
+                    "CIRCUIT": 2
                 }
             }]
         }

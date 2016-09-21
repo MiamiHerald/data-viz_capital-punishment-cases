@@ -36,11 +36,11 @@ class Choropleth {
   loadData() {
     d3.queue()
       .defer(d3.json, this.shapeUrl)
-      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.id, +d.rate))
+      .defer(d3.json, this.dataUrl)
       .await(this.drawMap.bind(this));
   }
 
-  drawMap(error, shapeData, unemploymentData) {
+  drawMap(error, shapeData, caseData) {
     if (error) throw error;
 
     this.counties = this.svg.append(`g`)
@@ -48,7 +48,7 @@ class Choropleth {
       .selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => this.quantize(this.rateById.get(d.properties.GEOID)))
+        .attr(`class`, (d) => `circuit--${d.properties.CIRCUIT}`)
         .attr(`d`, this.path);
   }
 }

@@ -1,0 +1,471 @@
+[
+  {
+    "Circuit": 1,
+    "Counties": "Escambia",
+    "Median": "17,814.57",
+    "Average": "46,259.77",
+    "Cases": 94
+  },
+  {
+    "Circuit": 1,
+    "Counties": "Okaloosa",
+    "Median": "17,814.57",
+    "Average": "46,259.77",
+    "Cases": 94
+  },
+  {
+    "Circuit": 1,
+    "Counties": "Santa Rosa",
+    "Median": "17,814.57",
+    "Average": "46,259.77",
+    "Cases": 94
+  },
+  {
+    "Circuit": 1,
+    "Counties": "Walton",
+    "Median": "17,814.57",
+    "Average": "46,259.77",
+    "Cases": 94
+  },
+  {
+    "Circuit": 2,
+    "Counties": "Franklin",
+    "Median": "31,728.00",
+    "Average": "36,033.15",
+    "Cases": 83
+  },
+  {
+    "Circuit": 2,
+    "Counties": "Gadsden",
+    "Median": "31,728.00",
+    "Average": "36,033.15",
+    "Cases": 83
+  },
+  {
+    "Circuit": 2,
+    "Counties": "Jefferson",
+    "Median": "31,728.00",
+    "Average": "36,033.15",
+    "Cases": 83
+  },
+  {
+    "Circuit": 2,
+    "Counties": "Leon",
+    "Median": "31,728.00",
+    "Average": "36,033.15",
+    "Cases": 83
+  },
+  {
+    "Circuit": 2,
+    "Counties": "Liberty",
+    "Median": "31,728.00",
+    "Average": "36,033.15",
+    "Cases": 83
+  },
+  {
+    "Circuit": 2,
+    "Counties": "Wakulla",
+    "Median": "31,728.00",
+    "Average": "36,033.15",
+    "Cases": 83
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Columbia",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Dixie",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Hamilton",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Lafayette",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Madison",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Suwannee",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 3,
+    "Counties": "Taylor",
+    "Median": "30,125.00",
+    "Average": "29,881.24",
+    "Cases": 38
+  },
+  {
+    "Circuit": 4,
+    "Counties": "Clay",
+    "Median": "29,034.40",
+    "Average": "52,171.01",
+    "Cases": 189
+  },
+  {
+    "Circuit": 4,
+    "Counties": "Duval",
+    "Median": "29,034.40",
+    "Average": "52,171.01",
+    "Cases": 189
+  },
+  {
+    "Circuit": 4,
+    "Counties": "Nassau",
+    "Median": "29,034.40",
+    "Average": "52,171.01",
+    "Cases": 189
+  },
+  {
+    "Circuit": 5,
+    "Counties": "Citrus",
+    "Median": "36,184.57",
+    "Average": "82,513.37",
+    "Cases": 67
+  },
+  {
+    "Circuit": 5,
+    "Counties": "Hernando",
+    "Median": "36,184.57",
+    "Average": "82,513.37",
+    "Cases": 67
+  },
+  {
+    "Circuit": 5,
+    "Counties": "Lake",
+    "Median": "36,184.57",
+    "Average": "82,513.37",
+    "Cases": 67
+  },
+  {
+    "Circuit": 5,
+    "Counties": "Marion",
+    "Median": "36,184.57",
+    "Average": "82,513.37",
+    "Cases": 67
+  },
+  {
+    "Circuit": 5,
+    "Counties": "Sumter",
+    "Median": "36,184.57",
+    "Average": "82,513.37",
+    "Cases": 67
+  },
+  {
+    "Circuit": 6,
+    "Counties": "Pasco",
+    "Median": "19,709.42",
+    "Average": "43,345.13",
+    "Cases": 153
+  },
+  {
+    "Circuit": 6,
+    "Counties": "Pinellas",
+    "Median": "19,709.42",
+    "Average": "43,345.13",
+    "Cases": 153
+  },
+  {
+    "Circuit": 7,
+    "Counties": "Flagler",
+    "Median": "29,965.01",
+    "Average": "58,879.08",
+    "Cases": 116
+  },
+  {
+    "Circuit": 7,
+    "Counties": "Putnam",
+    "Median": "29,965.01",
+    "Average": "58,879.08",
+    "Cases": 116
+  },
+  {
+    "Circuit": 7,
+    "Counties": "St. Johns",
+    "Median": "29,965.01",
+    "Average": "58,879.08",
+    "Cases": 116
+  },
+  {
+    "Circuit": 7,
+    "Counties": "Volusia",
+    "Median": "29,965.01",
+    "Average": "58,879.08",
+    "Cases": 116
+  },
+  {
+    "Circuit": 8,
+    "Counties": "Alachua",
+    "Median": "39,666.83",
+    "Average": "68,793.51",
+    "Cases": 37
+  },
+  {
+    "Circuit": 8,
+    "Counties": "Baker",
+    "Median": "39,666.83",
+    "Average": "68,793.51",
+    "Cases": 37
+  },
+  {
+    "Circuit": 8,
+    "Counties": "Bradford",
+    "Median": "39,666.83",
+    "Average": "68,793.51",
+    "Cases": 37
+  },
+  {
+    "Circuit": 8,
+    "Counties": "Gilchrist",
+    "Median": "39,666.83",
+    "Average": "68,793.51",
+    "Cases": 37
+  },
+  {
+    "Circuit": 8,
+    "Counties": "Levy",
+    "Median": "39,666.83",
+    "Average": "68,793.51",
+    "Cases": 37
+  },
+  {
+    "Circuit": 8,
+    "Counties": "Union",
+    "Median": "39,666.83",
+    "Average": "68,793.51",
+    "Cases": 37
+  },
+  {
+    "Circuit": 9,
+    "Counties": "Orange",
+    "Median": "15,330.65",
+    "Average": "28,597.74",
+    "Cases": 139
+  },
+  {
+    "Circuit": 9,
+    "Counties": "Osceola",
+    "Median": "15,330.65",
+    "Average": "28,597.74",
+    "Cases": 139
+  },
+  {
+    "Circuit": 10,
+    "Counties": "Hardee",
+    "Median": "24,826.38",
+    "Average": "40,476.05",
+    "Cases": 122
+  },
+  {
+    "Circuit": 10,
+    "Counties": "Highlands",
+    "Median": "24,826.38",
+    "Average": "40,476.05",
+    "Cases": 122
+  },
+  {
+    "Circuit": 10,
+    "Counties": "Polk",
+    "Median": "24,826.38",
+    "Average": "40,476.05",
+    "Cases": 122
+  },
+  {
+    "Circuit": 11,
+    "Counties": "Miami-Dade",
+    "Median": "54,977.60",
+    "Average": "142,211.10",
+    "Cases": 352
+  },
+  {
+    "Circuit": 12,
+    "Counties": "DeSoto",
+    "Median": "19,364.38",
+    "Average": "30,355.25",
+    "Cases": 25
+  },
+  {
+    "Circuit": 12,
+    "Counties": "Manatee",
+    "Median": "19,364.38",
+    "Average": "30,355.25",
+    "Cases": 25
+  },
+  {
+    "Circuit": 12,
+    "Counties": "Sarasota",
+    "Median": "19,364.38",
+    "Average": "30,355.25",
+    "Cases": 25
+  },
+  {
+    "Circuit": 13,
+    "Counties": "Hillsborough",
+    "Median": "19,196.26",
+    "Average": "32,178.58",
+    "Cases": 71
+  },
+  {
+    "Circuit": 14,
+    "Counties": "Bay",
+    "Median": "15,174.00",
+    "Average": "21,690.50",
+    "Cases": 17
+  },
+  {
+    "Circuit": 14,
+    "Counties": "Calhoun",
+    "Median": "15,174.00",
+    "Average": "21,690.50",
+    "Cases": 17
+  },
+  {
+    "Circuit": 14,
+    "Counties": "Gulf",
+    "Median": "15,174.00",
+    "Average": "21,690.50",
+    "Cases": 17
+  },
+  {
+    "Circuit": 14,
+    "Counties": "Holmes",
+    "Median": "15,174.00",
+    "Average": "21,690.50",
+    "Cases": 17
+  },
+  {
+    "Circuit": 14,
+    "Counties": "Jackson",
+    "Median": "15,174.00",
+    "Average": "21,690.50",
+    "Cases": 17
+  },
+  {
+    "Circuit": 14,
+    "Counties": "Washington",
+    "Median": "15,174.00",
+    "Average": "21,690.50",
+    "Cases": 17
+  },
+  {
+    "Circuit": 15,
+    "Counties": "Palm Beach",
+    "Median": "27,473.25",
+    "Average": "52,866.85",
+    "Cases": 114
+  },
+  {
+    "Circuit": 16,
+    "Counties": "Monroe",
+    "Median": "19,102.40",
+    "Average": "19,102.40",
+    "Cases": 1
+  },
+  {
+    "Circuit": 17,
+    "Counties": "Broward",
+    "Median": "37,006.30",
+    "Average": "62,408.92",
+    "Cases": 221
+  },
+  {
+    "Circuit": 18,
+    "Counties": "Brevard",
+    "Median": "20,791.00",
+    "Average": "39,062.41",
+    "Cases": 57
+  },
+  {
+    "Circuit": 18,
+    "Counties": "Seminole",
+    "Median": "20,791.00",
+    "Average": "39,062.41",
+    "Cases": 57
+  },
+  {
+    "Circuit": 19,
+    "Counties": "Indian River",
+    "Median": "34,471.46",
+    "Average": "63,150.55",
+    "Cases": 51
+  },
+  {
+    "Circuit": 19,
+    "Counties": "Martin",
+    "Median": "34,471.46",
+    "Average": "63,150.55",
+    "Cases": 51
+  },
+  {
+    "Circuit": 19,
+    "Counties": "Okeechobee",
+    "Median": "34,471.46",
+    "Average": "63,150.55",
+    "Cases": 51
+  },
+  {
+    "Circuit": 19,
+    "Counties": "St. Lucie",
+    "Median": "34,471.46",
+    "Average": "63,150.55",
+    "Cases": 51
+  },
+  {
+    "Circuit": 20,
+    "Counties": "Charlotte",
+    "Median": "28,613.15",
+    "Average": "114,727.37",
+    "Cases": 40
+  },
+  {
+    "Circuit": 20,
+    "Counties": "Collier",
+    "Median": "28,613.15",
+    "Average": "114,727.37",
+    "Cases": 40
+  },
+  {
+    "Circuit": 20,
+    "Counties": "Glades",
+    "Median": "28,613.15",
+    "Average": "114,727.37",
+    "Cases": 40
+  },
+  {
+    "Circuit": 20,
+    "Counties": "Hendry",
+    "Median": "28,613.15",
+    "Average": "114,727.37",
+    "Cases": 40
+  },
+  {
+    "Circuit": 20,
+    "Counties": "Lee",
+    "Median": "28,613.15",
+    "Average": "114,727.37",
+    "Cases": 40
+  }
+]
