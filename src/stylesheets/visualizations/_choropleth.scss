@@ -1,12 +1,25 @@
-.q0-9 { fill: rgb(247,251,255); }
-.q1-9 { fill: rgb(222,235,247); }
-.q2-9 { fill: rgb(198,219,239); }
-.q3-9 { fill: rgb(158,202,225); }
-.q4-9 { fill: rgb(107,174,214); }
-.q5-9 { fill: rgb(66,146,198); }
-.q6-9 { fill: rgb(33,113,181); }
-.q7-9 { fill: rgb(8,81,156); }
-.q8-9 { fill: rgb(8,48,107); }
+.circuit {
+  &--1 { fill: #B9242D }
+  &--2 { fill: #BC282D }
+  &--3 { fill: #BF2C2E }
+  &--4 { fill: #C2302E }
+  &--5 { fill: #C5352F }
+  &--6 { fill: #C8392F }
+  &--7 { fill: #CB3D30 }
+  &--8 { fill: #CE4130 }
+  &--9 { fill: #D14631 }
+  &--10 { fill: #D44A31 }  
+  &--11 { fill: #D84E32 }  
+  &--12 { fill: #DB5232 }  
+  &--13 { fill: #DE5733 }  
+  &--14 { fill: #E15B33 }  
+  &--15 { fill: #E45F34 }  
+  &--16 { fill: #E76334 }  
+  &--17 { fill: #EA6835 }  
+  &--18 { fill: #ED6C35 }  
+  &--19 { fill: #F07036 }  
+  &--20 { fill: #F47537 }  
+}
 
 .counties path {
   stroke: #fff;

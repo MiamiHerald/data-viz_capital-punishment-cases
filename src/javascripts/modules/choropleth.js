@@ -10,7 +10,7 @@ class Choropleth {
     this.rateById = d3.map();
     this.quantize = d3.scaleQuantize()
       .domain([0, 0.15])
-      .range(d3.range(9).map((i) => `q${i}-9`));
+      .range(d3.range(9).map((i) => `circuit--${i}`));
     this.projection = d3.geoMercator()
       .center([-81.5158, 27.6648])
       .scale(3500);
@@ -36,19 +36,21 @@ class Choropleth {
   loadData() {
     d3.queue()
       .defer(d3.json, this.shapeUrl)
-      .defer(d3.json, this.dataUrl)
+      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.id, +d.rate))
       .await(this.drawMap.bind(this));
   }
 
   drawMap(error, shapeData, caseData) {
     if (error) throw error;
 
+    console.log(this.rateById);
+
     this.counties = this.svg.append(`g`)
         .attr(`class`, `counties`)
       .selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => `circuit--${d.properties.CIRCUIT}`)
+        .attr(`class`, (d) => this.quantize(this.rateById.get(d.id)))
         .attr(`d`, this.path);
   }
 }
