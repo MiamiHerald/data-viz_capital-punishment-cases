@@ -37,7 +37,7 @@ class Choropleth {
   loadData() {
     d3.queue()
       .defer(d3.json, this.shapeUrl)
-      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.Counties, numeral().unformat(d.Median), parseInt(d.Circuit)))
+      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.Counties, numeral().unformat(d.Median)))
       .await(this.drawMap.bind(this));
   }
 
@@ -50,7 +50,14 @@ class Choropleth {
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
         .attr(`class`, (d) => `${this.quantize(this.rateById.get(d.properties.NAME))} circuit--${d.properties.CIRCUIT}`)
-        .attr(`d`, this.path);
+        .attr(`d`, this.path)
+        .on("mouseover", (d) => {
+          d3.select(`#info`).html(`
+            <h2>${d.properties.NAME}</h2>
+            <p>${numeral(this.rateById.get(d.properties.NAME)).format('$0,0.00')}</p>
+            <p>Circuit: ${d.properties.CIRCUIT}</p>
+          `)
+        });
 
     shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
       this.svg.append(`path`)
