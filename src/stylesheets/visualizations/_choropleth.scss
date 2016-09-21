@@ -12,3 +12,13 @@
   stroke: #fff;
   stroke-width: 1px;
 }
+
+.choropleth {
+  &--1 {
+    @include span-columns(12);
+  }
+
+  &--2, &--3, &--4 {
+    @include span-columns(4);
+  }
+}
