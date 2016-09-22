@@ -13,7 +13,7 @@ class Choropleth {
     this.height = Math.ceil(this.aspectRatio * this.width);
     this.mapWidth = this.width;
     this.dataUrl = dataUrl;
-    this.shapeUrl = `/data/new-florida.json`;
+    this.shapeUrl = `data/new-florida.json`;
     this.rateById = d3.map();
     this.quantize = d3.scaleQuantize()
       .domain([10000, 60000])
