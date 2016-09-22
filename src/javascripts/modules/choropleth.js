@@ -7,11 +7,11 @@ class Choropleth {
   constructor(el, dataUrl) {
     this.el = el;
     this.dataUrl = dataUrl;
-    this.shapeUrl = `/data/florida.json`;
+    this.shapeUrl = `/data/new-florida.json`;
     this.rateById = d3.map();
     this.quantize = d3.scaleQuantize()
       .domain([10000, 60000])
-      .range(d3.range(4).map((i) => `cases--${i + 1}`));
+      .range(d3.range(4).map((i) => `median--${i + 1}`));
     this.projection = d3.geoMercator()
       .center([-81.5158, 27.6648])
       .scale(3500);
@@ -37,7 +37,7 @@ class Choropleth {
   loadData() {
     d3.queue()
       .defer(d3.json, this.shapeUrl)
-      .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.Counties, numeral().unformat(d.Median)))
+      // .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.Counties, numeral().unformat(d.Median)))
       .await(this.drawMap.bind(this));
   }
 
@@ -49,15 +49,23 @@ class Choropleth {
       .selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => `${this.quantize(this.rateById.get(d.properties.NAME))} circuit--${d.properties.CIRCUIT}`)
+        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} circuit--${d.properties.CIRCUIT}`)
         .attr(`d`, this.path)
-        .on("mouseover", (d) => {
-          d3.select(`#info`).html(`
-            <h2>${d.properties.NAME}</h2>
-            <p>${numeral(this.rateById.get(d.properties.NAME)).format('$0,0.00')}</p>
-            <p>Circuit: ${d.properties.CIRCUIT}</p>
-          `)
-        });
+        .on(`mouseover`, (d) => {
+          d3.select(`#info`)
+              .attr(`class`, `choropleth__info--inner active`)
+              .html(`
+                <h2 class="info__circuit">Circuit ${d.properties.CIRCUIT}</h2>
+                <div class="info__median--title">Median Price</div>
+                <div class="info__median">${numeral(d.properties.Median).format('$0,0')} per case</div>
+                <div class="info__cases">(${d.properties.Cases} total cases)</div>
+                <div class="info__county">${d.properties.NAME} County</div>
+              `)
+        })
+        // .on(`mouseout`, () => {
+        //   d3.select(`#info`)
+        //       .attr(`class`, `choropleth__info--inner`)
+        // })
 
     shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
       this.svg.append(`path`)

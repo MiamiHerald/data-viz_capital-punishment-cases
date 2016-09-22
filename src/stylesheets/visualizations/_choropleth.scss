@@ -1,14 +1,42 @@
-.cases {
-  &--1 { fill: #FEDD90 }
-  &--2 { fill: #F58B51 }
-  &--3 { fill: #EB1C30 }
-  &--4 { fill: #000 }
+.median {
+  $shade-amount: 30%;
+
+  &--1 {
+    fill: #FEDD90;
+
+    &:hover {
+      fill: shade(#FEDD90, $shade-amount);
+    }
+  }
+  &--2 {
+    fill: #F58B51;
+
+    &:hover {
+      fill: shade(#F58B51, $shade-amount);
+    }
+  }
+  &--3 {
+    fill: #EB1C30;
+
+    &:hover {
+      fill: shade(#EB1C30, $shade-amount);
+    }
+  }
+  &--4 {
+    fill: #000;
+
+    &:hover {
+      fill: tint(#000, $shade-amount);
+    }
+  }
 }
 
 .counties path {
   stroke: #FFF;
   stroke-width: 1px;
   stroke-dasharray: 2;
+  opacity: 1;
+  transition: opacity 0.1s linear;
 }
 
 .choropleth {
@@ -17,7 +45,24 @@
   }
 
   &__info {
-    @include position(absolute, null null 15% 10%);
+    @include media($medium-screen-up) {
+      @include position(absolute, null null 35% 25%);
+      transform: translateX(-50%);  
+    }
+
+    h2, h3 {
+      margin: 0 0 0.25rem 0;
+    }
+
+    &--inner {
+      opacity: 0;
+      text-align: center;
+      transition: opacity 0.1s linear;
+
+      &.active {
+        opacity: 1;
+      }
+    }
   }
 }
 

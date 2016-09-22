@@ -1,14 +1,11 @@
 @import 'normalize';
 @import 'bourbon';
 @import 'neat';
+@import 'base/_grid-settings';
 @import 'base/fonts';
+@import 'base/_variables';
 
 @import 'atoms/container';
 
 @import 'visualizations/choropleth';
-
-body {
-  background: #fafafa;
-  font-family: 'McClatchy Slab', Helvetica, Arial, sans-serif;
-  color: #333;
-}
+@import 'visualizations/info';

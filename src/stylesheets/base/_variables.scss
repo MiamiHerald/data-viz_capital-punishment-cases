@@ -1,5 +1,11 @@
-$heading-font-family: 'Lyon';
+$heading-font-family: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
+$body-font-family: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
 
-h2 {
+body {
+  font-family: $body-font-family;
+}
+
+h1, h2, h3 {
   font-family: $heading-font-family;
+  font-weight: 500;
 }

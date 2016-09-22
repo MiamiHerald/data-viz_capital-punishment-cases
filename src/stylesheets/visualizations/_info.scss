@@ -1,0 +1,23 @@
+$info-margin-bottom: 0.25rem;
+
+.info {
+  padding: 1rem;
+
+  @include media($medium-screen-up) {
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
+    border: solid 2px #000;
+    border-radius: 5px;  
+  }
+
+  &__median--title, &__median, &__cases, &__county {
+    margin-bottom: $info-margin-bottom;
+  }
+
+  &__median {
+    font-size: 1.5rem;
+  }
+
+  &__county {
+    font-size: 1.25rem;
+  }
+}
