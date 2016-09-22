@@ -22,6 +22,7 @@ class Choropleth {
   render() {
     this.svg = d3.select(this.el).append(`svg`)
         .attr(`width`, `100%`)
+        .attr(`class`, `choropleth__svg`)
         .append(`g`);
 
     this.loadData();
@@ -31,13 +32,12 @@ class Choropleth {
 
   resizeChoropleth() {
     d3.select(`g`).attr(`transform`, `scale(${$(this.el).width() / 900})`);
-    $(`svg`).height($(this.el).width() * 0.618);
+    $(`.choropleth__svg`).height($(this.el).width() * 0.618);
   }
 
   loadData() {
     d3.queue()
       .defer(d3.json, this.shapeUrl)
-      // .defer(d3.tsv, this.dataUrl, (d) => this.rateById.set(d.Counties, numeral().unformat(d.Median)))
       .await(this.drawMap.bind(this));
   }
 
@@ -49,7 +49,7 @@ class Choropleth {
       .selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} circuit--${d.properties.CIRCUIT}`)
+        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} circuit--${d.properties.CIRCUIT} county--${d.properties.NAME}`)
         .attr(`d`, this.path)
         .on(`mouseover`, (d) => {
           d3.select(`#info`)
@@ -61,11 +61,7 @@ class Choropleth {
                 <div class="info__cases">(${d.properties.Cases} total cases)</div>
                 <div class="info__county">${d.properties.NAME} County</div>
               `)
-        })
-        // .on(`mouseout`, () => {
-        //   d3.select(`#info`)
-        //       .attr(`class`, `choropleth__info--inner`)
-        // })
+        });
 
     shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
       this.svg.append(`path`)

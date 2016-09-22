@@ -2,31 +2,31 @@
   $shade-amount: 30%;
 
   &--1 {
-    fill: #FEDD90;
+    fill: $light-yellow;
 
     &:hover {
-      fill: shade(#FEDD90, $shade-amount);
+      fill: shade($light-yellow, $shade-amount);
     }
   }
   &--2 {
-    fill: #F58B51;
+    fill: $light-orange;
 
     &:hover {
-      fill: shade(#F58B51, $shade-amount);
+      fill: shade($light-orange, $shade-amount);
     }
   }
   &--3 {
-    fill: #EB1C30;
+    fill: $red;
 
     &:hover {
-      fill: shade(#EB1C30, $shade-amount);
+      fill: shade($red, $shade-amount);
     }
   }
   &--4 {
-    fill: #000;
+    fill: $black;
 
     &:hover {
-      fill: tint(#000, $shade-amount);
+      fill: tint($black, $shade-amount);
     }
   }
 }
@@ -47,7 +47,7 @@
   &__info {
     @include media($medium-screen-up) {
       @include position(absolute, null null 35% 25%);
-      transform: translateX(-50%);  
+      transform: translateX(-50%);
     }
 
     h2, h3 {
@@ -62,6 +62,14 @@
       &.active {
         opacity: 1;
       }
+    }
+  }
+
+  &__range {
+    @include span-columns(4 of 12);
+    @include shift(4);
+    svg {
+      width: 200px;
     }
   }
 }
