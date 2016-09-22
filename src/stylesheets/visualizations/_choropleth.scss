@@ -12,12 +12,12 @@
 }
 
 .choropleth {
-  &--1 {
-    @include span-columns(12);
+  &__wrapper {
+    position: relative
   }
 
-  &--2, &--3, &--4 {
-    @include span-columns(4);
+  &__info {
+    @include position(absolute, null null 15% 10%);
   }
 }
 

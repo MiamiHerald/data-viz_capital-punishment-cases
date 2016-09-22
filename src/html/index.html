@@ -7,10 +7,8 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      <div id="choropleth1" class="choropleth choropleth--1 js-choropleth" data-url="{{ homeURL }}/data/death-penalty-cases.tsv" data-value="florida" data-title="Florida Unemployment Rates"></div>
-      <div id="info"></div>
-    </div>
+  <div class="choropleth__wrapper container">
+    <div id="choropleth1" class="choropleth js-choropleth" data-url="{{ homeURL }}/data/death-penalty-cases.tsv" data-value="florida" data-title="Florida Unemployment Rates"></div>
+    <div id="info" class="choropleth__info"></div>
   </div>
 {% endblock %}
