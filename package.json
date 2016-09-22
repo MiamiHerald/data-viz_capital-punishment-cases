@@ -6,7 +6,7 @@
     "node": ">=0.12.0 ~5.9.0",
     "npm": ">=2.14.12 ~3.7.3"
   },
-  "homepage": "http://code.viget.com/gulp-starter/",
+  "homepage": "http://MiamiHerald.github.io/data-viz_capital-punishment-cases",
   "repository": {
     "type": "git",
     "url": "git://github.com/MiamiHerald/data-viz_capital-punishment-cases.git"
