@@ -18,6 +18,7 @@ class Choropleth {
     this.quantize = d3.scaleQuantize()
       .domain([10000, 60000])
       .range(d3.range(4).map((i) => `median--${i + 1}`));
+    this.circuits = []
   }
 
   render() {
@@ -57,16 +58,38 @@ class Choropleth {
     this.path = d3.geoPath()
       .projection(this.projection);
 
+    // https://github.com/wbkd/d3-extended
+    d3.selection.prototype.moveToFront = function() {
+      return this.each(function(){
+        this.parentNode.appendChild(this);
+      });
+    };
+    d3.selection.prototype.moveToBack = function() {
+        return this.each(function() {
+            var firstChild = this.parentNode.firstChild;
+            if (firstChild) {
+                this.parentNode.insertBefore(this, firstChild);
+            }
+        });
+    };
+
     this.svg.selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county county__${d.properties.GEOID}`)
+        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county county--${d.properties.GEOID}`)
         .attr(`d`, this.path)
         .on(`mouseover`, (d) => {
+          d3.selectAll(`.circuit`)
+              .classed(`active`, false);
+
           d3.selectAll(`.county`)
               .classed(`active`, false);
-              
-          d3.select(`.county__${d.properties.GEOID}`)
+
+          d3.select(`.circuit--${d.properties.CIRCUIT}`)
+              .moveToFront()
+              .classed(`active`, true);
+
+          d3.select(`.county--${d.properties.GEOID}`)
               .classed(`active`, true);
 
           d3.select(`#info`)
@@ -79,19 +102,29 @@ class Choropleth {
               `)
         })
         .on(`mouseout`, (d) => {
+          d3.selectAll(`.circuit`)
+              .classed(`active`, false);
+
           d3.selectAll(`.county`)
               .classed(`active`, false);
         });
 
-    d3.select(`.county__12086`)
+    shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
+      if (!this.circuits.includes(x.properties.CIRCUIT)) {
+        this.svg.append(`path`)
+            .datum(topojson.merge(shapeData, shapeData.objects.cb_2015_florida_county_20m.geometries.filter((d) => d.properties.CIRCUIT === x.properties.CIRCUIT )))
+            .attr(`class`, `circuit circuit--${x.properties.CIRCUIT}`)
+            .attr(`d`, this.path);
+
+        this.circuits.push(x.properties.CIRCUIT);
+      }
+    });
+
+    d3.select(`.circuit--11`)
         .classed(`active`, true);
 
-    shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
-      this.svg.append(`path`)
-          .datum(topojson.merge(shapeData, shapeData.objects.cb_2015_florida_county_20m.geometries.filter((d) => d.properties.CIRCUIT === x.properties.CIRCUIT )))
-          .attr(`class`, `circuit`)
-          .attr(`d`, this.path);
-    });
+    d3.select(`.county--12086`)
+        .classed(`active`, true);
   }
 }
 

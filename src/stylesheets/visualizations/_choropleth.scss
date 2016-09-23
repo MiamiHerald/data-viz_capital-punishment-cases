@@ -53,6 +53,11 @@ $shade-amount: 30%;
   fill: none;
   stroke: $white;
   stroke-width: 1.5px;
+  z-index: 1;
+
+  &.active {
+    stroke: $black;
+  }
 }
 
 .county {
@@ -75,7 +80,7 @@ $shade-amount: 30%;
     &.active { fill: shade($red, $shade-amount); }
   }
   &--4 {
-    fill: $black;
-    &.active { fill: tint($black, $shade-amount); }
+    fill: $deep-red;
+    &.active { fill: shade($deep-red, $shade-amount); }
   }
 }
