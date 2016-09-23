@@ -96,10 +96,6 @@ class Choropleth {
                 <div class="info__cases--title">County selected</div>
                 <div class="info__county">${d.properties.NAME}</div>
               `)
-        })
-        .on(`mouseout`, (d) => {
-          d3.selectAll(`.circuit`)
-              .classed(`active`, false);
         });
 
     shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
