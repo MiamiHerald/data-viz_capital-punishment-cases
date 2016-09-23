@@ -8,6 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include "shared/app-icons.html" %}
     {% block head %}{% endblock %}
+    <script type="text/javascript" src="http://media.miamiherald.com/static/media/projects/libraries/pym/pym.min.js"></script>
+  	<script type="text/javascript">
+    	window.onload = function() {
+    		window.iframeChild = new pym.Child();
+    		iframeChild.sendHeightToParent();
+    	}
+  	</script>
   </head>
   <body>
     {% block content %}{% endblock %}
