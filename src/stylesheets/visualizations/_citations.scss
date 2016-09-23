@@ -1,0 +1,24 @@
+.citations {
+  &__credit,
+  &__source {
+    font-size: rem(11);
+    padding: 0 0 5px 0;
+    margin: 0;
+
+    @include span-columns(4 of 12);
+  }
+
+  &__source {
+    @include shift(2);
+  }
+
+  &__credit {
+    text-align: right;
+  }
+
+  &__border {
+    @include span-columns(8 of 12);
+    @include shift(2);
+    border-bottom: 2px dotted #ccc;
+  }
+}
