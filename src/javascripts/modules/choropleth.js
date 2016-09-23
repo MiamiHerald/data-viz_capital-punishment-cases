@@ -93,6 +93,7 @@ class Choropleth {
                 <div class="info__median">${numeral(d.properties.Median).format('$0,0')}</div>
                 <div class="info__cases--title">Total cases</div>
                 <div class="info__cases">${d.properties.Cases}</div>
+                <div class="info__cases--title">County selected</div>
                 <div class="info__county">${d.properties.NAME}</div>
               `)
         })
