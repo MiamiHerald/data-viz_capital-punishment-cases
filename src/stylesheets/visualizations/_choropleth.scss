@@ -1,7 +1,8 @@
-.choropleth {
+$shade-amount: 30%;
 
+.choropleth {
   &--inner {
-    position: relative;  
+    position: relative;
   }
 
   &__wrapper {
@@ -42,13 +43,8 @@
     }
 
     &--inner {
-      opacity: 0;
       text-align: center;
       transition: opacity 0.1s linear;
-
-      &.active {
-        opacity: 1;
-      }
     }
   }
 }
@@ -63,27 +59,23 @@
   stroke: $white;
   stroke-width: 1px;
   stroke-dasharray: 2;
-  opacity: 1;
-  transition: opacity 0.1s linear;
 }
 
 .median {
-  $shade-amount: 30%;
-
   &--1 {
     fill: $light-yellow;
-    &:hover { fill: shade($light-yellow, $shade-amount); }
+    &.active { fill: shade($light-yellow, $shade-amount); }
   }
   &--2 {
     fill: $light-orange;
-    &:hover { fill: shade($light-orange, $shade-amount); }
+    &.active { fill: shade($light-orange, $shade-amount); }
   }
   &--3 {
     fill: $red;
-    &:hover { fill: shade($red, $shade-amount); }
+    &.active { fill: shade($red, $shade-amount); }
   }
   &--4 {
     fill: $black;
-    &:hover { fill: tint($black, $shade-amount); }
+    &.active { fill: tint($black, $shade-amount); }
   }
 }

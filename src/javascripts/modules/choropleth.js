@@ -60,11 +60,16 @@ class Choropleth {
     this.svg.selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} circuit--${d.properties.CIRCUIT} county`)
+        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county county__${d.properties.GEOID}`)
         .attr(`d`, this.path)
         .on(`mouseover`, (d) => {
+          d3.selectAll(`.county`)
+              .classed(`active`, false);
+              
+          d3.select(`.county__${d.properties.GEOID}`)
+              .classed(`active`, true);
+
           d3.select(`#info`)
-              .attr(`class`, `choropleth__info--inner active`)
               .html(`
                 <h2 class="info__circuit">Circuit ${d.properties.CIRCUIT}</h2>
                 <div class="info__median--title">Median Price</div>
@@ -72,7 +77,14 @@ class Choropleth {
                 <div class="info__cases">(${d.properties.Cases} total cases)</div>
                 <div class="info__county">${d.properties.NAME} County</div>
               `)
+        })
+        .on(`mouseout`, (d) => {
+          d3.selectAll(`.county`)
+              .classed(`active`, false);
         });
+
+    d3.select(`.county__12086`)
+        .classed(`active`, true);
 
     shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
       this.svg.append(`path`)
