@@ -1,21 +1,36 @@
-$heading-font-family: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
+$heading-font-family-script: 'McClatchy Slab', Georgia,Times, 'Times New Roman', serif;
+$heading-font-family-sans: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
 $body-font-family: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
 
 body {
   font-family: $body-font-family;
 
   font-size: 0.75rem;
+
+  @include media($medium-screen-up) {
+    font-size: 1rem;
+  }
 }
 
 h1, h2, h3 {
-  font-family: $heading-font-family;
-  font-weight: 500;
   margin: 0 0 0.25rem 0;
 }
 
+h1 {
+  font-family: $heading-font-family-script;
+  font-size: 1rem;
+  font-weight: bold;
+
+  @include media($medium-screen-up) {
+    font-size: 1.25rem;
+  }
+}
+
 h2 {
+  font-family: $heading-font-family-sans;
   font-size: 0.75rem;
-  
+  font-weight: 500;
+
   @include media($medium-screen-up) {
     font-size: 1rem;
   }
