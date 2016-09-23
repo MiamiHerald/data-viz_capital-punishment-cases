@@ -1,12 +1,16 @@
 $info-margin-bottom: 0.25rem;
 
 .info {
-  padding: 1rem;
+  padding: 0.25rem;
+  background-color: $white;
+
+  border: solid 2px #000;
+  border-radius: 5px;
 
   @include media($medium-screen-up) {
+    padding: 1rem;
     box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
-    border: solid 2px #000;
-    border-radius: 5px;  
+    border-radius: 5px;
   }
 
   &__median--title, &__median, &__cases, &__county {
@@ -14,10 +18,18 @@ $info-margin-bottom: 0.25rem;
   }
 
   &__median {
-    font-size: 1.5rem;
+    font-size: 1rem;
+
+    @include media($medium-screen-up) {
+      font-size: 1.5rem;
+    }
   }
 
   &__county {
-    font-size: 1.25rem;
+    font-weight: 500;
+
+    @include media($medium-screen-up) {
+      font-size: 1.25rem;
+    }
   }
 }

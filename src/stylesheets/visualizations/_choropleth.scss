@@ -1,44 +1,17 @@
-.median {
-  $shade-amount: 30%;
-
-  &--1 {
-    fill: $light-yellow;
-    &:hover { fill: shade($light-yellow, $shade-amount); }
-  }
-  &--2 {
-    fill: $light-orange;
-    &:hover { fill: shade($light-orange, $shade-amount); }
-  }
-  &--3 {
-    fill: $red;
-    &:hover { fill: shade($red, $shade-amount); }
-  }
-  &--4 {
-    fill: $black;
-    &:hover { fill: tint($black, $shade-amount); }
-  }
-}
-
-.circuit {
-  fill: none;
-  stroke: $white;
-  stroke-width: 1.5px;
-}
-
-.county {
-  stroke: $white;
-  stroke-width: 1px;
-  stroke-dasharray: 2;
-  opacity: 1;
-  transition: opacity 0.1s linear;
-}
-
 .choropleth {
   &__wrapper {
-    padding: 1rem;
+    position: relative;
+    padding: 0.25rem;
+
+    @include media($medium-screen-up) {
+      padding: 1rem;
+    }
   }
 
   &__info {
+    @include position(absolute, null null 17% 30%);
+    transform: translateX(-50%);
+
     @include media($medium-screen-up) {
       @include position(absolute, null null 35% 25%);
       transform: translateX(-50%);
@@ -60,9 +33,44 @@
     margin-bottom: 1rem;
 
     svg {
-      width: 200px;
+      width: 150px;
       margin: 0 auto;
       display: block;
     }
+  }
+}
+
+.circuit {
+  fill: none;
+  stroke: $white;
+  stroke-width: 1.5px;
+}
+
+.county {
+  stroke: $white;
+  stroke-width: 1px;
+  stroke-dasharray: 2;
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+.median {
+  $shade-amount: 30%;
+
+  &--1 {
+    fill: $light-yellow;
+    &:hover { fill: shade($light-yellow, $shade-amount); }
+  }
+  &--2 {
+    fill: $light-orange;
+    &:hover { fill: shade($light-orange, $shade-amount); }
+  }
+  &--3 {
+    fill: $red;
+    &:hover { fill: shade($red, $shade-amount); }
+  }
+  &--4 {
+    fill: $black;
+    &:hover { fill: tint($black, $shade-amount); }
   }
 }
