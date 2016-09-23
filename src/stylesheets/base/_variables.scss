@@ -19,10 +19,13 @@ h1, h2, h3 {
 h1 {
   font-family: $heading-font-family-script;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 600;
+  line-height: 1.25;
+  padding-top: 20px;
+  border-top: 2px dotted #ccc;
 
   @include media($medium-screen-up) {
-    font-size: 1.25rem;
+    font-size: rem(20);
   }
 }
 
@@ -34,6 +37,10 @@ h2 {
   @include media($medium-screen-up) {
     font-size: 1rem;
   }
+}
+
+p {
+  margin-top: 10px;
 }
 
 $light-yellow: #FFDC91;
