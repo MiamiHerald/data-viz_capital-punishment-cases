@@ -1,4 +1,4 @@
-$shade-amount: 30%;
+$shade-amount: 15%;
 
 .choropleth {
   &--inner {
@@ -67,20 +67,8 @@ $shade-amount: 30%;
 }
 
 .median {
-  &--1 {
-    fill: $light-yellow;
-    &.active { fill: shade($light-yellow, $shade-amount); }
-  }
-  &--2 {
-    fill: $light-orange;
-    &.active { fill: shade($light-orange, $shade-amount); }
-  }
-  &--3 {
-    fill: $red;
-    &.active { fill: shade($red, $shade-amount); }
-  }
-  &--4 {
-    fill: $deep-red;
-    &.active { fill: shade($deep-red, $shade-amount); }
-  }
+  &--1 { fill: $light-yellow; }
+  &--2 { fill: $yellow; }
+  &--3 { fill: $light-orange; }
+  &--4 { fill: $red; }
 }

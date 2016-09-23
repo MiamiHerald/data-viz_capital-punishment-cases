@@ -2,50 +2,9 @@ $heading-font-family-script: 'McClatchy Slab', Georgia,Times, 'Times New Roman',
 $heading-font-family-sans: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
 $body-font-family: 'McClatchy Sans', Georgia,Times, 'Times New Roman', serif;
 
-body {
-  font-family: $body-font-family;
-
-  font-size: 0.75rem;
-
-  @include media($medium-screen-up) {
-    font-size: 1rem;
-  }
-}
-
-h1, h2, h3 {
-  margin: 0 0 0.25rem 0;
-}
-
-h1 {
-  font-family: $heading-font-family-script;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.25;
-  padding-top: 20px;
-  border-top: 2px dotted #ccc;
-
-  @include media($medium-screen-up) {
-    font-size: rem(20);
-  }
-}
-
-h2 {
-  font-family: $heading-font-family-sans;
-  font-size: 0.75rem;
-  font-weight: 500;
-
-  @include media($medium-screen-up) {
-    font-size: 1rem;
-  }
-}
-
-p {
-  margin-top: 10px;
-}
-
-$light-yellow: #FFDC91;
-$light-orange: #F68A50;
-$red: #ED1B2F;
-$deep-red: #CC3333;
+$light-yellow: #ffecc5;
+$yellow: #ffdc90;
+$light-orange: #f58a4f;
+$red: #ed1b2e;
 $black: #000000;
 $white: #FFFFFF;

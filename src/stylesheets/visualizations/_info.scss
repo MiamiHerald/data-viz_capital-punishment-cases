@@ -1,35 +1,26 @@
-$info-margin-bottom: 0.25rem;
+$info-margin-bottom: 0.2rem;
 
 .info {
-  padding: 0.25rem;
+  padding: 0.75rem;
   background-color: $white;
-
-  border: solid 2px #000;
+  border: 1px solid #ccc;
   border-radius: 5px;
 
-  @include media($medium-screen-up) {
-    padding: 1rem;
-    box-shadow: 5px 5px 0px 0px rgba(0,0,0,0.75);
-    border-radius: 5px;
-  }
-
-  &__median--title, &__median, &__cases, &__county {
+  &__median--title,
+  &__median,
+  &__cases--title,
+  &__cases,
+  &__county--title,
+  &__county {
     margin-bottom: $info-margin-bottom;
   }
 
-  &__median {
-    font-size: 1rem;
-
-    @include media($medium-screen-up) {
-      font-size: 1.5rem;
-    }
-  }
-
-  &__county {
-    font-weight: 500;
-
-    @include media($medium-screen-up) {
-      font-size: 1.25rem;
-    }
+  &__median--title,
+  &__cases--title,
+  &__county--title {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin-top: 0.7rem;
+    color: #AAA;
   }
 }

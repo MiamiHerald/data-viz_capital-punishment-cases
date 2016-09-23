@@ -76,36 +76,28 @@ class Choropleth {
     this.svg.selectAll(`path`)
         .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
       .enter().append(`path`)
-        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county county--${d.properties.GEOID}`)
+        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county`)
         .attr(`d`, this.path)
         .on(`mouseover`, (d) => {
           d3.selectAll(`.circuit`)
-              .classed(`active`, false);
-
-          d3.selectAll(`.county`)
               .classed(`active`, false);
 
           d3.select(`.circuit--${d.properties.CIRCUIT}`)
               .moveToFront()
               .classed(`active`, true);
 
-          d3.select(`.county--${d.properties.GEOID}`)
-              .classed(`active`, true);
-
           d3.select(`#info`)
               .html(`
                 <h2 class="info__circuit">Circuit ${d.properties.CIRCUIT}</h2>
-                <div class="info__median--title">Median Price</div>
-                <div class="info__median">${numeral(d.properties.Median).format('$0,0')} per case</div>
-                <div class="info__cases">(${d.properties.Cases} total cases)</div>
-                <div class="info__county">${d.properties.NAME} County</div>
+                <div class="info__median--title">Median per case</div>
+                <div class="info__median">${numeral(d.properties.Median).format('$0,0')}</div>
+                <div class="info__cases--title">Total cases</div>
+                <div class="info__cases">${d.properties.Cases}</div>
+                <div class="info__county">${d.properties.NAME}</div>
               `)
         })
         .on(`mouseout`, (d) => {
           d3.selectAll(`.circuit`)
-              .classed(`active`, false);
-
-          d3.selectAll(`.county`)
               .classed(`active`, false);
         });
 
@@ -121,9 +113,6 @@ class Choropleth {
     });
 
     d3.select(`.circuit--11`)
-        .classed(`active`, true);
-
-    d3.select(`.county--12086`)
         .classed(`active`, true);
   }
 }
