@@ -13,15 +13,11 @@ h1, h2, h3 {
 
 h1 {
   font-family: $heading-font-family-script;
-  font-size: 1rem;
+  font-size: rem(20);
   font-weight: 600;
   line-height: 1.25;
   padding-top: 20px;
   border-top: 2px dotted #ccc;
-
-  @include media($medium-screen-up) {
-    font-size: rem(20);
-  }
 }
 
 h2 {
@@ -31,5 +27,6 @@ h2 {
 }
 
 p {
+  font-size: 1rem;
   margin-top: 10px;
 }
