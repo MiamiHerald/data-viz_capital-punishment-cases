@@ -6,15 +6,13 @@ import numeral from 'numeral';
 window.$ = $;
 
 class Choropleth {
-  constructor(el, dataUrl) {
+  constructor(el) {
     this.el = el;
     this.aspectRatio = 0.6667;
     this.width = $(this.el).width();
     this.height = Math.ceil(this.aspectRatio * this.width);
     this.mapWidth = this.width;
-    this.dataUrl = dataUrl;
     this.shapeUrl = `data/new-florida.json`;
-    this.rateById = d3.map();
     this.quantize = d3.scaleQuantize()
       .domain([10000, 60000])
       .range(d3.range(4).map((i) => `median--${i + 1}`));
@@ -50,10 +48,10 @@ class Choropleth {
       .await(this.drawMap.bind(this));
   }
 
-  drawMap(error, shapeData, caseData) {
+  drawMap(error, shapeData) {
     if (error) throw error;
 
-    this.projection = d3.geoMercator()
+    this.projection = d3.geoEquirectangular()
       .fitSize([this.width, this.height], topojson.feature(shapeData, shapeData.objects[`cb_2015_florida_county_20m`]));
     this.path = d3.geoPath()
       .projection(this.projection);
@@ -120,9 +118,8 @@ const loadChoropleths = () => {
   $choropleth.each((index) => {
     const $this = $choropleth.eq(index);
     const id = $this.attr(`id`);
-    const url = $this.data(`url`);
 
-    new Choropleth(`#${id}`, url).render();
+    new Choropleth(`#${id}`).render();
   });
 }
 
