@@ -18,6 +18,7 @@ class Choropleth {
       .domain([10000, 60000])
       .range(d3.range(4).map((i) => `median--${i + 1}`));
     this.circuits = []
+    this.pymChild = null;
   }
 
   render() {
@@ -27,7 +28,9 @@ class Choropleth {
         .append(`g`);
 
     this.loadData();
-    this.resizeChoropleth();
+    $(window).on(`load`, () => {
+      this.pymChild = new pym.Child({ renderCallback: this.resizeChoropleth.bind(this) });
+    });
     $(window).on(`resize`, this.resizeChoropleth.bind(this));
   }
 
@@ -40,6 +43,10 @@ class Choropleth {
 
       TweenLite.set(chart, { scale: this.width / this.mapWidth });
       d3.select(`.choropleth__svg`).attr(`height`, this.height);
+
+      if (this.pymChild) {
+        this.pymChild.sendHeight();
+      }
     });
   }
 
@@ -110,8 +117,6 @@ class Choropleth {
 
     d3.select(`.circuit--11`)
         .classed(`active`, true);
-
-    this.pymChild = new pym.Child({ renderCallback: this.resizeChoropleth.bind(this) });
   }
 }
 
