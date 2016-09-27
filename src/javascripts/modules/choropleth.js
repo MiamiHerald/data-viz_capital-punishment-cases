@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import * as topojson from 'topojson';
 import { TweenLite } from 'gsap';
 import numeral from 'numeral';
+import * as pym from 'pym.js'
 window.$ = $;
 
 class Choropleth {
@@ -17,6 +18,7 @@ class Choropleth {
       .domain([10000, 60000])
       .range(d3.range(4).map((i) => `median--${i + 1}`));
     this.circuits = []
+    this.pymChild = null;
   }
 
   render() {
@@ -109,6 +111,8 @@ class Choropleth {
 
     d3.select(`.circuit--11`)
         .classed(`active`, true);
+
+    this.pymChild = new pym.Child({ renderCallback: this.resizeChoropleth.bind(this) });
   }
 }
 
