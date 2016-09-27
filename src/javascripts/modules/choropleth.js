@@ -18,7 +18,6 @@ class Choropleth {
       .domain([10000, 60000])
       .range(d3.range(4).map((i) => `median--${i + 1}`));
     this.circuits = []
-    this.pymChild = null;
   }
 
   render() {
