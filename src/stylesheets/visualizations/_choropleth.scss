@@ -24,7 +24,7 @@ $shade-amount: 15%;
   }
 
   &__info {
-    @include position(absolute, null null 0% 30%);
+    @include position(absolute, null null 15% 30%);
     transform: translateX(-50%);
 
     @include media($medium-screen-up) {
