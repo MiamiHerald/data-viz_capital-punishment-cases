@@ -14,9 +14,6 @@ class Choropleth {
     this.height = Math.ceil(this.aspectRatio * this.width);
     this.mapWidth = this.width;
     this.shapeUrl = `data/new-florida.json`;
-    this.quantize = d3.scaleQuantize()
-      .domain([10000, 60000])
-      .range(d3.range(4).map((i) => `median--${i + 1}`));
     this.circuits = []
     this.pymChild = null;
   }
@@ -59,6 +56,13 @@ class Choropleth {
   drawMap(error, shapeData) {
     if (error) throw error;
 
+    const counties = topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features;
+
+    this.extent = d3.extent(counties, (d) => numeral().unformat(d.properties.Median))
+    this.quantize = d3.scaleQuantize()
+      .domain(this.extent)
+      .range(d3.range(4).map((i) => `median--${i + 1}`));
+
     this.projection = d3.geoEquirectangular()
       .fitSize([this.width, this.height], topojson.feature(shapeData, shapeData.objects[`cb_2015_florida_county_20m`]));
     this.path = d3.geoPath()
@@ -80,7 +84,7 @@ class Choropleth {
     };
 
     this.svg.selectAll(`path`)
-        .data(topojson.feature(shapeData, shapeData.objects.cb_2015_florida_county_20m).features)
+        .data(counties)
       .enter().append(`path`)
         .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county`)
         .attr(`d`, this.path)
