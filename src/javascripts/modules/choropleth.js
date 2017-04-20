@@ -28,7 +28,9 @@ class Choropleth {
         .append('g');
 
     this.loadData();
-    
+
+    // create a new pym child on window load to invoke resizeChoropleth function,
+    // which will send height to the the pym parent
     $(window).on('load', () => {
       this.pymChild = new pym.Child({ renderCallback: this.resizeChoropleth.bind(this) });
     });
@@ -52,6 +54,7 @@ class Choropleth {
   }
 
   loadData() {
+    // load the FL geoJson data from data/new-florida.json
     d3.queue()
       .defer(d3.json, this.shapeUrl)
       .await(this.drawMap.bind(this));
