@@ -1,3 +1,4 @@
+// import libraries
 import $ from 'jquery';
 import * as d3 from 'd3';
 import * as topojson from 'topojson';
@@ -8,38 +9,41 @@ window.$ = $;
 
 class Choropleth {
   constructor(el) {
+    // initialize globals
     this.el = el;
     this.aspectRatio = 1;
     this.width = $(this.el).width();
     this.height = Math.ceil(this.aspectRatio * this.width);
     this.mapWidth = this.width;
-    this.shapeUrl = `data/new-florida.json`;
+    this.shapeUrl = 'data/new-florida.json';
     this.circuits = []
     this.pymChild = null;
   }
 
   render() {
-    this.svg = d3.select(this.el).append(`svg`)
-        .attr(`width`, `100%`)
-        .attr(`class`, `choropleth__svg`)
-        .append(`g`);
+    // create an svg with 100% width
+    this.svg = d3.select(this.el).append('svg')
+        .attr('width', '100%')
+        .attr('class', 'choropleth__svg')
+        .append('g');
 
     this.loadData();
-    $(window).on(`load`, () => {
+    
+    $(window).on('load', () => {
       this.pymChild = new pym.Child({ renderCallback: this.resizeChoropleth.bind(this) });
     });
-    $(window).on(`resize`, this.resizeChoropleth.bind(this));
+    $(window).on('resize', this.resizeChoropleth.bind(this));
   }
 
   resizeChoropleth() {
     window.requestAnimationFrame(() => {
-      const chart = $(this.el).find(`g`);
+      const chart = $(this.el).find('g');
 
       this.width = $(this.el).width();
       this.height = Math.ceil(this.aspectRatio * this.width);
 
       TweenLite.set(chart, { scale: this.width / this.mapWidth });
-      d3.select(`.choropleth__svg`).attr(`height`, this.height);
+      d3.select('.choropleth__svg').attr('height', this.height);
 
       if (this.pymChild) {
         this.pymChild.sendHeight();
@@ -64,7 +68,7 @@ class Choropleth {
       .range(d3.range(4).map((i) => `median--${i + 1}`));
 
     this.projection = d3.geoEquirectangular()
-      .fitSize([this.width, this.height], topojson.feature(shapeData, shapeData.objects[`cb_2015_florida_county_20m`]));
+      .fitSize([this.width, this.height], topojson.feature(shapeData, shapeData.objects['cb_2015_florida_county_20m']));
     this.path = d3.geoPath()
       .projection(this.projection);
 
@@ -83,20 +87,20 @@ class Choropleth {
         });
     };
 
-    this.svg.selectAll(`path`)
+    this.svg.selectAll('path')
         .data(counties)
-      .enter().append(`path`)
-        .attr(`class`, (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county`)
-        .attr(`d`, this.path)
-        .on(`mouseover`, (d) => {
-          d3.selectAll(`.circuit`)
-              .classed(`active`, false);
+      .enter().append('path')
+        .attr('class', (d) => `${this.quantize(numeral().unformat(d.properties.Median))} county`)
+        .attr('d', this.path)
+        .on('mouseover', (d) => {
+          d3.selectAll('.circuit')
+              .classed('active', false);
 
           d3.select(`.circuit--${d.properties.CIRCUIT}`)
               .moveToFront()
-              .classed(`active`, true);
+              .classed('active', true);
 
-          d3.select(`#info`)
+          d3.select('#info')
               .html(`
                 <h2 class="info__circuit">Circuit ${d.properties.CIRCUIT}</h2>
                 <div class="info__median--title">Median per case</div>
@@ -110,24 +114,26 @@ class Choropleth {
 
     shapeData.objects.cb_2015_florida_county_20m.geometries.forEach((x) => {
       if (!this.circuits.includes(x.properties.CIRCUIT)) {
-        this.svg.append(`path`)
+        this.svg.append('path')
             .datum(topojson.merge(shapeData, shapeData.objects.cb_2015_florida_county_20m.geometries.filter((d) => d.properties.CIRCUIT === x.properties.CIRCUIT )))
-            .attr(`class`, `circuit circuit--${x.properties.CIRCUIT}`)
-            .attr(`d`, this.path);
+            .attr('class', `circuit circuit--${x.properties.CIRCUIT}`)
+            .attr('d', this.path);
 
         this.circuits.push(x.properties.CIRCUIT);
       }
     });
 
-    d3.select(`.circuit--11`)
-        .classed(`active`, true);
+    d3.select('.circuit--11')
+        .classed('active', true);
   }
 }
 
 const loadChoropleths = () => {
-  const $choropleth = $(`.js-choropleth`);
+  const $choropleth = $('.js-choropleth');
 
   $choropleth.each((index) => {
+    // for each choropleth classed .js-choropleth,
+    // fetch the id and call the render function on the Choropleth
     const $this = $choropleth.eq(index);
     const id = $this.attr(`id`);
 
